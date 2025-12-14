@@ -6,7 +6,7 @@ import {
     Package,
     ShoppingCart,
     LayoutDashboard,
-    Settings,
+    User,
 } from "lucide-react";
 
 import {
@@ -25,8 +25,8 @@ import {
 const menuItems = [
     { title: "Dashboard", url: "/", icon: LayoutDashboard },
     { title: "Products", url: "/products", icon: Package },
+    { title: "Customers", url: "/customers", icon: User },
     { title: "Orders", url: "/orders", icon: ShoppingCart },
-    { title: "Settings", url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {

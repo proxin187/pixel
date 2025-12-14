@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { eq } from "drizzle-orm";
 
-import { AppTable } from "@/components/table";
+import { ProductsTable } from "@/components/products";
 import { db } from "@/db";
 import { products } from "@/db/schema";
 
@@ -58,7 +58,7 @@ export default async function Page() {
     return (
         <div className="flex justify-self-center w-[50%]">
             <Suspense fallback={<p>loading</p>}>
-                <AppTable products={allProducts} />
+                <ProductsTable products={allProducts} />
             </Suspense>
         </div>
     )

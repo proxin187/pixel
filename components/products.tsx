@@ -57,11 +57,11 @@ interface Product {
     stock: number;
 }
 
-interface AppTableProps {
+interface ProductsTableProps {
     products: Promise<Product[]>;
 }
 
-export function AppTable({ products }: AppTableProps) {
+export function ProductsTable({ products }: ProductsTableProps) {
     const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
     const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
 
@@ -274,7 +274,7 @@ export function AppTable({ products }: AppTableProps) {
                                                         </AlertDialogHeader>
                                                         <AlertDialogFooter>
                                                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                                            <AlertDialogAction onClick={() => handleDeleteProduct(product.id)}>Continue</AlertDialogAction>
+                                                            <AlertDialogAction onClick={() => handleDeleteProduct(product.id)}>Confirm</AlertDialogAction>
                                                         </AlertDialogFooter>
                                                     </AlertDialogContent>
                                                 </AlertDialog>
