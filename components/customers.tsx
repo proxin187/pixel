@@ -181,7 +181,6 @@ export default function CustomersTable({ customers }: CustomersTableProps) {
                 </Dialog>
             </div>
 
-            {/* Edit Customer Dialog */}
             <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
                 <DialogContent className="sm:max-w-[500px]">
                     <form onSubmit={handleUpdateCustomer}>
@@ -231,7 +230,6 @@ export default function CustomersTable({ customers }: CustomersTableProps) {
                 </DialogContent>
             </Dialog>
 
-            {/* View Customer Dialog */}
             <Dialog open={isViewDialogOpen} onOpenChange={setIsViewDialogOpen}>
                 <DialogContent className="sm:max-w-[600px]">
                     <DialogHeader>
@@ -295,7 +293,7 @@ export default function CustomersTable({ customers }: CustomersTableProps) {
                                                     <TableRow key={order.id}>
                                                         <TableCell>#{order.id}</TableCell>
                                                         <TableCell>{order.createdAt ? new Date(order.createdAt).toLocaleDateString() : '-'}</TableCell>
-                                                        <TableCell>${(order.totalAmount / 100).toFixed(2)}</TableCell>
+                                                        <TableCell>${order.totalAmount}</TableCell>
                                                         <TableCell>
                                                             <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
                                                                 order.status === 'delivered' ? 'bg-green-100 text-green-700' :

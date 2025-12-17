@@ -218,7 +218,7 @@ export default function OrdersTable({ orders, customers, products }: OrdersTable
                                         <SelectContent>
                                             {productsList.map((product) => (
                                                 <SelectItem key={product.id} value={product.id.toString()}>
-                                                    {product.name} (${(product.price / 100).toFixed(2)}) - Stock: {product.stock}
+                                                    {product.name} (${product.price}) - Stock: {product.stock}
                                                 </SelectItem>
                                             ))}
                                         </SelectContent>
@@ -267,7 +267,6 @@ export default function OrdersTable({ orders, customers, products }: OrdersTable
                 </Dialog>
             </div>
 
-            {/* Edit Order Status Dialog */}
             <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
                 <DialogContent className="sm:max-w-[425px]">
                     <form onSubmit={handleUpdateOrderStatus}>
@@ -333,7 +332,7 @@ export default function OrdersTable({ orders, customers, products }: OrdersTable
                                         <TableCell>{product?.name || "N/A"}</TableCell>
                                         <TableCell>{order.quantity}</TableCell>
                                         <TableCell className="font-medium">
-                                            ${(order.totalAmount / 100).toFixed(2)}
+                                            ${order.totalAmount}
                                         </TableCell>
                                         <TableCell>
                                             <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${getStatusColor(order.status)}`}>

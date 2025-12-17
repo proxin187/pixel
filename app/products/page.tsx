@@ -56,11 +56,9 @@ export default async function Page() {
     let allProducts = db.select().from(products);
 
     return (
-        <div className="flex justify-self-center w-[50%]">
-            <Suspense fallback={<p>loading</p>}>
-                <ProductsTable products={allProducts} />
-            </Suspense>
-        </div>
+        <Suspense fallback={<p>loading</p>}>
+            <ProductsTable products={allProducts} />
+        </Suspense>
     )
 }
 

@@ -241,7 +241,7 @@ export function ProductsTable({ products }: ProductsTableProps) {
                                 <TableRow key={product.id}>
                                     <TableCell className="pl-6 font-medium">{product.name}</TableCell>
                                     <TableCell className="max-w-[300px] truncate">{product.description}</TableCell>
-                                    <TableCell className="font-medium">${product.price.toFixed(2)}</TableCell>
+                                    <TableCell className="font-medium">${product.price}</TableCell>
                                     <TableCell>{product.stock}</TableCell>
                                     <TableCell className="text-right">
                                         <DropdownMenu>

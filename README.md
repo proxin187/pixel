@@ -1,6 +1,6 @@
 # Pixel
 
-Pixel is a small business management platform developed as a part of a school project.
+Pixel is a minimal ecommerce platform developed as a part of a school project.
 
 ## Features
  - Product management: Create, delete and update products.
