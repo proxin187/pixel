@@ -15,6 +15,7 @@ export async function createProduct(form: FormData) {
             description: form.get("description")!.toString(),
             price: parseInt(form.get("price")!.toString()),
             stock: parseInt(form.get("stock")!.toString()),
+            imageUrl: form.get("image_url")!.toString(),
         });
 
     const { revalidatePath } = await import("next/cache");
@@ -35,6 +36,7 @@ export async function updateProduct(form: FormData) {
             description: description!.toString(),
             price: parseInt(price!.toString()),
             stock: parseInt(stock!.toString()),
+            imageUrl: form.get("image_url")!.toString(),
         })
         .where(eq(products.id, parseInt(id!.toString())));
 

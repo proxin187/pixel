@@ -47,7 +47,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-import { Trash2, Pencil, Plus, Ellipsis } from "lucide-react";
+import { Trash2, Pencil, Plus, Ellipsis, ImageIcon } from "lucide-react";
 
 interface Product {
     id: number;
@@ -55,6 +55,7 @@ interface Product {
     description: string;
     price: number;
     stock: number;
+    imageUrl: string;
 }
 
 interface ProductsTableProps {
@@ -152,6 +153,16 @@ export function ProductsTable({ products }: ProductsTableProps) {
                                         required
                                     />
                                 </div>
+                                <div className="grid gap-2">
+                                    <Label htmlFor="image_url">Image URL</Label>
+                                    <Input
+                                        id="image_url"
+                                        name="image_url"
+                                        type="url"
+                                        placeholder="https://example.com/image.jpg"
+                                        required
+                                    />
+                                </div>
                             </div>
                             <DialogFooter>
                                 <Button type="submit">Create Product</Button>
@@ -210,6 +221,16 @@ export function ProductsTable({ products }: ProductsTableProps) {
                                     required
                                 />
                             </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="image_url">Image URL</Label>
+                                <Input
+                                    id="image_url"
+                                    name="image_url"
+                                    type="url"
+                                    placeholder="https://example.com/image.jpg"
+                                    defaultValue={editingProduct?.imageUrl || ""}
+                                />
+                            </div>
                         </div>
                         <DialogFooter>
                             <Button type="submit">Update Product</Button>
@@ -222,6 +243,7 @@ export function ProductsTable({ products }: ProductsTableProps) {
                 <Table>
                     <TableHeader>
                         <TableRow>
+                            <TableHead className="w-[80px] pl-6">Image</TableHead>
                             <TableHead className="w-[200px] pl-6">Name</TableHead>
                             <TableHead>Description</TableHead>
                             <TableHead className="w-[120px]">Price</TableHead>
@@ -239,6 +261,19 @@ export function ProductsTable({ products }: ProductsTableProps) {
                         ) : (
                             productsList.map((product) => (
                                 <TableRow key={product.id}>
+                                    <TableCell className="pl-6">
+                                        {product.imageUrl ? (
+                                            <img
+                                                src={product.imageUrl}
+                                                alt={product.name}
+                                                className="w-12 h-12 object-cover rounded"
+                                            />
+                                        ) : (
+                                            <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
+                                                <ImageIcon className="w-6 h-6 text-muted-foreground" />
+                                            </div>
+                                        )}
+                                    </TableCell>
                                     <TableCell className="pl-6 font-medium">{product.name}</TableCell>
                                     <TableCell className="max-w-[300px] truncate">{product.description}</TableCell>
                                     <TableCell className="font-medium">${product.price}</TableCell>

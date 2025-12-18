@@ -58,7 +58,6 @@ interface ReportsContentProps {
     salesTrends: Promise<SalesTrendData[]>;
     bestSellingProducts: Promise<ProductStats[]>;
     lowStockProducts: Promise<StockAlert[]>;
-    profitabilityData: Promise<ProductStats[]>;
 }
 
 export default function ReportsContent({

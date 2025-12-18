@@ -64,11 +64,11 @@ export function AppSidebar() {
                             <SidebarMenuButton>
                                 <div className="flex items-center gap-2">
                                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
-                                        JD
+                                        AD
                                     </div>
                                     <div className="flex flex-col text-sm">
-                                        <span className="font-medium">John Doe</span>
-                                        <span className="text-xs text-muted-foreground">john@example.com</span>
+                                        <span className="font-medium">Admin</span>
+                                        <span className="text-xs text-muted-foreground">admin@pixel.com</span>
                                     </div>
                                 </div>
                             </SidebarMenuButton>
